@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const totalImagesToLoad = Math.min(currentIndex, imageUrls.length);
             if (imagesLoadedCount >= totalImagesToLoad) {
                 document.querySelector('.gallery').style.opacity = '1'; // Show gallery
-                document.querySelector('footer').style.opacity = '1'; // Show footer
+                // document.querySelector('footer').style.opacity = '1'; // Show footer
                 loadMoreButton.style.opacity = '1'; // Show load more button
                 loadingElement.classList.add('hidden'); // Hide loading animation
             }
@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(data => {
                     if (!exifController.signal.aborted) {
                         exifInfo.innerHTML = `
-                            <p>光圈: ${data.FNumber ? `f/${data.FNumber}` : 'N/A'}  ·  快门: ${data.ExposureTime ? `${data.ExposureTime}s` : 'N/A'}  ·  ISO: ${data.ISO ? data.ISO : 'N/A'}</p>
+                            <p>Aperture: ${data.FNumber ? `f/${data.FNumber}` : 'N/A'}  ·  Shutter: ${data.ExposureTime ? `${data.ExposureTime}s` : 'N/A'}  ·  ISO: ${data.ISO ? data.ISO : 'N/A'}</p>
                         `;
                     }
                 })
